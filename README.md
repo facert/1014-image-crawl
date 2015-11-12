@@ -13,7 +13,12 @@ scrapy crawl caoliu
 ```
 ### config
 settings 里面配置项：
+
 IMAGE_PATH = './images/'  # 存图片位置
 
 SRC_PATH = './'  # 存档位置
+
+ALLOW_DOMAIN = '' # 地址
+
+CAOLIU_URL = '' # 地址
 
