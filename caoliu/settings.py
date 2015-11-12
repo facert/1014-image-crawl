@@ -89,5 +89,7 @@ ITEM_PIPELINES = {
     'caoliu.pipelines.ImagePipeline': 300,
 }
 
+ALLOW_DOMAIN = 'cl.c1oulske1.pw'
+CAOLIU_URL = 'http://cl.c1oulske1.pw'
 IMAGE_PATH = './images/'
 SRC_PATH = './'

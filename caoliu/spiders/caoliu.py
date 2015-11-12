@@ -3,20 +3,21 @@
 import urlparse
 import scrapy
 from ..items import ImageItem
+from .. import settings
 
 
 class CaoSpider(scrapy.Spider):
     name = "caoliu"
-    allowed_domains = ["cl.c1oulske1.pw"]
-    start_urls = ['http://cl.c1oulske1.pw/thread0806.php?fid=2',
-                    'http://cl.c1oulske1.pw/thread0806.php?fid=8',
-                    'http://cl.c1oulske1.pw/thread0806.php?fid=16',
-                    'http://cl.c1oulske1.pw/thread0806.php?fid=15',
-                    'http://cl.c1oulske1.pw/thread0806.php?fid=4',
-                    'http://cl.c1oulske1.pw/thread0806.php?fid=5',
-                    'http://cl.c1oulske1.pw/thread0806.php?fid=21']
+    allowed_domains = [settings.ALLOW_DOMAIN]
+    start_urls = ['%s/thread0806.php?fid=2' % settings.CAOLIU_URL,
+                    '%s/thread0806.php?fid=8' % settings.CAOLIU_URL,
+                    '%s/thread0806.php?fid=16' % settings.CAOLIU_URL,
+                    '%s/thread0806.php?fid=15' % settings.CAOLIU_URL,
+                    '%s/thread0806.php?fid=4' % settings.CAOLIU_URL,
+                    '%s/thread0806.php?fid=5' % settings.CAOLIU_URL,
+                    '%s/thread0806.php?fid=21' % settings.CAOLIU_URL]
 
-    domain = "http://cl.c1oulske1.pw/"
+    domain = settings.CAOLIU_URL
 
     def parse(self, response):
         for url in self.start_urls:
